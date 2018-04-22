@@ -33,7 +33,8 @@ MouseGetPos, MouseX, MouseY
 if (MouseY < T and MouseX < T) 
 {
 send, #{Tab} ; Win+Tab to open taskviewer
-MouseMove, Xcenter, Ycenter ; centre mouse
+MouseMove, 15, 10 ; move mouse to prevent continual toggling 
+;MouseMove, Xcenter, Ycenter ; alternatively, centre mouse
 }
 
 ;Commands for top right corner

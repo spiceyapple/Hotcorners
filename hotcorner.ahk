@@ -1,24 +1,14 @@
-; Timer to check mouse position
-SetTimer, CheckMouse, 300
-
-#Persistent
-#SingleInstance force
-
-WinGetPos,,,Xmax,Ymax,ahk_class Progman  ; get desktop size
-
+#Persistent ; run constantly
+#SingleInstance force ; run one instance only
 
 T = 2   ; adjust tolerance value 
 
-Xmax := Xmax - T   ; allow tolerance to mouse corner activation position
-Ymax := Ymax - T
+; Timer to check mouse position
+SetTimer, CheckMouse, 300
 
 CheckMouse:                   ; check mouse position
 CoordMode, Mouse, Screen
 MouseGetPos, MouseX, MouseY
-
-GetKeyState, SState, Shift
-GetKeyState, AState, Alt
-GetKeyState, CState, Control
 
 ; open taskview if mouse in top left corner
 
